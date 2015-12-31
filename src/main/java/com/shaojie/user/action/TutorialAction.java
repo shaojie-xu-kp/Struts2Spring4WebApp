@@ -1,5 +1,6 @@
 package com.shaojie.user.action;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.shaojie.user.service.TutorialService;
@@ -12,9 +13,11 @@ public class TutorialAction {
 	
 	private String language;
 	
+	@Autowired
+	private TutorialService tutorialService;
+	
 	public String execute(){
 		
-		TutorialService tutorialService = new TutorialService();
 		
 		this.setActionValue("action_value");
 		System.out.println("TutorialAction executed.");
